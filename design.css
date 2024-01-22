@@ -1,0 +1,142 @@
+body {
+    margin:0;
+    height: 100vh;
+}
+
+body, div, button {
+    cursor: url('images/marteau_curseur.png'), auto;
+}
+
+.greenFloor {
+    width: 100vh;
+    background: url('images/fondVert.png');
+    background-size: cover;
+}
+
+#start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; height: 100%;
+    text-align : center;
+}
+
+#start button {
+    position: inherit; top: 50%; left: 50%;
+    background-color: #58d68d;
+    border: 1px solid  #2ecc71; 
+    border-radius: 5px;
+    font-weight: bold;
+    width : 150px;
+    height: 50px;
+    align-items: center;
+}
+
+#start button:hover {
+    opacity: 0.5;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+#start .accueil {
+    border: thick double #117a65;
+    padding: 5%;
+    padding-top : 2%;
+}
+
+#score {
+    position: absolute; bottom: 0; left:0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#score p {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#score p span {
+    background-color: white;
+    padding: 3%;
+    font-size: 25px;
+}
+
+#score .pscore {
+    background-color: #f39c12;
+    width: 350px;
+    padding: 2%;
+    margin-right: 5%;
+}
+
+#score .coups {
+    background-color:  #ec7063;
+    width: 350px;
+    padding: 2%;
+    margin-right: 5%;
+}
+
+#cible {
+    width: 90%;
+}
+
+#cible img {
+    position: absolute;
+    width: 150px;
+    opacity: 0;
+}
+
+#cible img.visible {
+    opacity:1;
+}
+
+#cible img.untouchable{
+    transition: opacity 1s;
+    transition-duration: 3s;
+    filter: grayscale(100%);
+}
+
+
+#cible img.anime1{
+    animation-duration: 2s ;
+    animation-name: vanish;
+}
+
+@keyframes vanish {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+#cible img.anime2{
+    animation-duration: 3s ;
+    animation-name: byeMole;
+    
+}
+
+@keyframes byeMole {
+    from {
+        width: 10%;
+        height: 10%;
+    }
+    to {
+        width: 300px;
+        height: 0;
+    }
+}
+
+.final {
+    position: absolute;
+    width: 100%; height: 100%;
+    text-align : center;
+}
